@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="html5shiv.min.js"></script>
+<style>
+	body,h2,h3,h4,h5,p,ul,ol{margin:0;padding:0;font-family:"宋体";font-size:12px;}
+	li{list-style:none;}
+	a{text-decoration:none;}
+	img{border:none;vertical-align:top;}
+	.clearFix{zoom:0;}
+	.clearFix:after{content:"";display:block;clear:both;}
+	.wrap{width:952px;padding:6px 17px 8px 11px;margin:30px auto;}
+	/*top合*//*top开始*/
+	.header{line-height:30px;height:31px;background:url(img/headerBg.png) repeat-x;border-bottom:1px solid #e4e6d0}
+	.more{color:#5f5f5f;}
+	/*toplef开始*/
+	.topleft{float:left;width:688px;height:375px;border:1px solid #d5bfb1;overflow:hidden;}
+	.topleft .header h2{float:left;background:url(img/header.png) no-repeat 2px 2px;font-size:18px;color:#924200;text-indent:22px;padding-top:2px;}
+	.topleft .header nav{float:right;color:#b8b3b7;}
+	.topleft .header nav span{padding:0 14px 0 22px;color:#cc3008;}
+	.topleft .header nav a{color:#867638;padding:0 7px;}
+	/*topleft第一部分开始*/
+	.topleft1{float:left;width:480px;padding:11px 0 16px 12px;}
+	.topleft1 header{height:27px;background:url(img/topleft.png) no-repeat 0 26px;}
+	.topleft1 header h4{float:left;font:14px/26px "宋体";text-indent:31px;background:url(img/liBg.png) no-repeat 5px 4px;}
+	.topleft1 header .more{float:right;color:#696969;line-height:22px;padding:4px 20px 0 0;}
+	.topleft1 li a{color:#000;}
+	.topleft1 .left1{float:left;width:240px;line-height:24px;text-indent:21px;padding-bottom:14px;}
+	.topleft1 .list{padding-top:5px;}
+	.topleft1 .list li{background:url(img/dian.png) no-repeat 10px 10px;font-size:14px;}
+	/*topleft第二部分开始*/
+	.topleft2{float:left;width:178px;margin:12px 0 18px 4px;border:1px solid #eeeeee;background:#f8f8f8;}
+	.topleft2 .ul1{padding:7px 11px 0 9px;}
+	.topleft2 .ul1 li{padding:6px 0 13px 0;}
+	.topleft2 .ul1 h4{line-height:26px;color:#cb3600;}
+	.topleft2 .ul1 p{line-height:20px;padding-left:2px;}
+	.topleft2 .ul1 p a{color:#686868;}
+	.topleft2 .ul1 li{padding:7px 0 12px;border-bottom:1px solid #e4e4e4;}
+	.topleft2 .ul2{padding:19px 0 15px 9px;}
+	.topleft2 .ul2 li{float:left;width:77px;margin-right:7px;line-height:14px;}
+	.topleft2 .ul2 img{border:1px solid #cccccc;}
+	.topleft2 .ul2 li strong{display:block;text-align:center;font-weight:normal;padding-top:8px;color:#000000;}
+	/*topleft结束，topright开始*/
+	.topright{float:left;width:255px;margin-left:5px;border:1px solid #d5bfb1;}
+	.topright .header h2{background:url(img/header.png) no-repeat 3px 1px;font-size:18px;color:#924200;text-indent:22px;padding-top:2px;}
+	.topright .footer{padding:6px 25px 18px 26px;}
+	.topright .footer .h3{height:35px;background:url(img/topright.png) no-repeat 0 34px;}
+	.topright .footer .h3 h3{float:left;line-height:34px;font-size:14px;}
+	.topright .footer .h3 a{float:right;line-height:32px;padding:0 17px 0 5px;color:#fff4e6;background:url(img/topimg.png) no-repeat 0 5px;}
+	.topright .footer .div header{height:26px;padding-top:11px;}
+	.topright .footer h4{float:left;height:26px;line-height:24px;text-indent:17px;color:#70061d;background:url(img/yuan.png) no-repeat 1px 6px;}
+	.topright .footer .div .more{float:right;width:48px;line-height:24px;}
+	.topright .footer .div li{line-height:26px;text-indent:16px;background:url(img/dian.png) no-repeat 5px 10px;}
+	.topright .footer .div li a{color:#000;}
+	.topright .footer .divul{padding-bottom:8px;border-bottom:1px dashed #aeaeae;}
+	.topright .footer .nav{line-height:22px;}
+	.topright .footer .nav span{font-weight:bold;}
+	.topright .footer .nav nav{padding-top:12px;}
+	.topright .footer .nav nav a{color:#2f2f2f;padding-left:15px;}
+	/*top结束，bottom开始*/
+	.bottom{border:1px solid #d6beb2;margin-top:10px;}
+	/*bottom的头部和内容*/
+	.bottom .header h2{float:left;font-size:18px;text-indent:22px;color:#9b490f;background:url(img/header.png) no-repeat 3px 1px;}
+	.bottom .header nav{float:right;width:200px;color:#bfbbb8;}
+	.bottom .header nav a{padding:0 5px;color:#8d772b;}
+	.bottom .content{width:920px;height:331px;padding:12px 12px 18px 18px;}
+	/*共有*/
+	.bottom .content h3{float:left;line-height:26px;font-size:14px;color:#020202;}
+	.bottom .content .h3 .more{float:right;line-height:30px;padding-right:17px;}
+	.bottom .content .h3 a{color:#656565;}  
+	/*bottom内容左边*/
+	.bottom .content .contentleft{float:left;width:402px;}
+	.contentleft .h3{height:31px;background:url(img/bottomleft.png) no-repeat 0 30px;}
+	.contentleft .footer nav{float:left;height:232px;margin-top:18px;}
+    .contentleft .footer nav div{float:left;width:61px;}
+	.contentleft .footer nav h5{line-height:18px;height:20px;width:60px;text-align:center;background:url(img/h5Bg.png) no-repeat;border:1px solid #e2d7c5;border-right:none;margin-bottom:4px;}
+	.contentleft .footer nav .yangsheng{background:url(img/yangsheng.png) no-repeat;}
+	.contentleft .footer nav h5 a{color:#7a3605;}
+	.contentleft .footer nav .wuguan{margin-bottom:6px;}
+	.contentleft .footer nav ol{float:left;width:160px;height:230px;border:1px solid #e2d7c5; overflow: hidden;}
+	.contentleft .footer nav ol li{vertical-align:top;float:left;width:152px;}
+	.contentleft .footer nav ol a{line-height:20px;padding:0 0 6px 8px;color:#000;float:left;}
+	.contentleft .footer ul{float:left;width:179px;padding-top:15px;}
+	.contentleft .footer ul li{padding:0 21px 0 26px;}
+	.contentleft .footer ul img{padding:2px;border:1px solid #e8e8e8;}
+	.contentleft .footer ul strong{display:block;font-weight:normal;text-align:center;color:#5d5d5d;line-height:20px;padding-top:7px;}
+	/*bottom内容中间*/
+	.bottom .content .contentcenter{float:left;width:238px;}
+	.bottom .content .contentcenter .h3{height:31px;background:url(img/bottomcenter.png) no-repeat 0 30px;}
+	.contentcenter .footer{float:left;width:204px;padding-right:33px;}
+	.contentcenter .footer .h3 a{float:right;width:48px;font:12px/24px "宋体";padding:0 17px 0 5px;color:#fff4e6;background:url(img/topimg.png) no-repeat 0 1px;}
+	.contentcenter .footer .div header{height:26px;padding-top:11px;}
+	.contentcenter .footer h4{float:left;width:69px;height:26px;line-height:24px;text-indent:17px;color:#70061d;background:url(img/yuan.png) no-repeat 1px 6px;}
+	.contentcenter .footer .div .more{float:right;width:48px;line-height:24px;}
+	.contentcenter .footer .div li{line-height:26px;text-indent:16px;background:url(img/dian.png) no-repeat 5px 10px;}
+	.contentcenter .footer .div li a{color:#000;}
+	.contentcenter .footer .divul{padding-bottom:8px;border-bottom:1px dashed #aeaeae;}
+	.contentcenter .footer .nav{line-height:22px;}
+	.contentcenter .footer .nav span{font-weight:bold;}
+	.contentcenter .footer .nav nav{padding-top:12px;}
+	.contentcenter .footer .nav nav a{color:#2f2f2f;padding-left:15px;}
+	/*bottom内容右边*/
+	.bottom .content .contentright{float:left;width:280px;}
+	.bottom .content .contentright .h3{height:31px;background:url(img/bottomright.png) no-repeat 0 30px;}
+	.contentright .center header{height:31px;line-height:20px;text-indent:16px;background:url(img/yuan.png) no-repeat 0 17px;}
+	.bottom .content .contentright .h3 .more{padding-right:34px;}
+	.contentright .center h4{color:#7b0d2a;padding-top:13px;}
+	.contentright .center li{padding-top:16px;}
+	.contentright .center li section{height:69px;}
+	.contentright .center .litop{border-bottom:1px dashed #a1a1a1;}
+	.contentright .center .img{float:left;width:93px;}
+	.contentright .center img{padding:2px;border:1px solid #e4e5d5;margin:0 10px 0 7px;}
+	.contentright .center .div{float:left;width:187px;line-height:22px;height:69px;}
+	.contentright .center .div h5{font-size:14px;color:#020202;}
+	.contentright .center .div p{color:#696969;width:168px;}
+	.contentright .center .div p a{color:#696969;}
+	.contentright .center li nav{line-height:34px;height:34px;}
+	.contentright .center li .nav{padding-top:15px;}
+	.contentright .center li nav a{color:#000;padding:0 8px 0 8px;}
+	.contentright .footer{line-height:16px;font-size:14px;}
+	.contentright .footer .a1{color:#6b330e;padding-left:5px;}
+	.contentright .footer .a2{color:#6b330e;padding-left:7px;}
+	.contentright .footer img{padding-left:7px;}
+</style>
+</head>
+<body>
+	<section class="wrap">
+		<section class="top clearFix">
+			<section class="topleft clearFix">
+				<header class="header clearFix">
+					<h2>中医文化</h2>
+					<nav><a href="#"><span>进入中医文化首页>></span></a></nav>
+					<nav>
+						<a href="#">中医常识</a>|<a href="#">中医方剂</a>|<a href="#">中医秘史</a>|<a href="#">特色诊疗</a>
+					</nav>	
+				</header>
+				<section class="clearFix">
+					<ul class="topleft1 clearFix"><!--避免ul里套ul-->
+						<li class="left1">
+							<header class="clearFix">
+								<h4>中医常识</h4>
+								<a href="#" class="more">更多>></a>
+							</header>
+							<ul class="list">
+								<li><a href="#">防病小常识：怎样预防上火</a></li>
+								<li><a href="#">从捏手指的痛感--预知健康</a></li>
+								<li><a href="#">突然光临的嘴瘾 意味着什么</a></li>
+								<li><a href="#">能帮你养生的中药有哪些？</a></li>
+								<li><a href="#">观察手部情况 认识你的体制</a></li>
+							</ul>
+						</li>
+						<li class="left1">
+							<header class="clearFix">
+								<h4>中医常识</h4>
+								<a href="#" class="more">更多>></a>
+							</header>
+							<ul class="list">
+								<li><a href="#">防病小常识：怎样预防上火</a></li>
+								<li><a href="#">从捏手指的痛感——预知健康</a></li>
+								<li><a href="#">突然光临的嘴瘾 意味着什么</a></li>
+								<li><a href="#">能帮你养生的中药有哪些？</a></li>
+								<li><a href="#">观察手部情况 认识你的体制</a></li>
+							</ul>
+						</li>
+						<li class="left1">
+							<header class="clearFix">
+								<h4>中医常识</h4>
+								<a href="#" class="more">更多>></a>
+							</header>
+							<ul class="list">
+								<li><a href="#">防病小常识：怎样预防上火</a></li>
+								<li><a href="#">从捏手指的痛感——预知健康</a></li>
+								<li><a href="#">突然光临的嘴瘾 意味着什么</a></li>
+								<li><a href="#">能帮你养生的中药有哪些？</a></li>
+								<li><a href="#">观察手部情况 认识你的体制</a></li>
+							</ul>
+						</li>
+						<li class="left1">
+							<header class="clearFix">
+								<h4>中医常识</h4>
+								<a href="#" class="more">更多>></a>
+							</header>
+							<ul class="list">
+								<li><a href="#">防病小常识：怎样预防上火</a></li>
+								<li><a href="#">从捏手指的痛感——预知健康</a></li>
+								<li><a href="#">突然光临的嘴瘾 意味着什么</a></li>
+								<li><a href="#">能帮你养生的中药有哪些？</a></li>
+								<li><a href="#">观察手部情况 认识你的体制</a></li>
+							</ul>
+						</li>
+					</ul>
+					<section class="topleft2">
+						<ul class="ul1">
+							<li>
+								<h4>中医常识</h4>
+								<p>
+									<a href="#">中医古籍</a>
+									<a href="#">中医术语</a>
+									<a href="#">中药知识</a>
+									<a href="#">望闻问切</a>
+								</p>
+							</li>
+							<li>
+								<h4>特色诊疗</h4>
+								<p>
+									<a href="#">针刺</a>
+									<a href="#">艾灸</a>
+									<a href="#">刮痧</a>
+									<a href="#">火罐</a>
+									<a href="#">药茶</a>
+									<a href="#">药酒</a>
+									<a href="#">气功</a>
+									<a href="#">太极</a>
+									<a href="#">按摩</a>
+								</p>
+							</li>
+						</ul>
+						<ul class="ul2 clearFix">
+							<li>
+								<a href="#"><img src="img/topimg1.png"/>
+								<strong>怎样刮痧治疗腰痛？</strong></a>
+							</li>
+							<li>
+								<a href="#"><img src="img/topimg2.png"/>
+								<strong>绿豆能治什么病？</strong></a>
+							</li>
+						</ul>
+					</section>
+				</section>
+			</section>
+			<section class="topright">
+				<header class="header clearFix">
+					<h2>互动</h2>
+				</header>
+				<section class="footer">
+					<header class="h3">
+						<h3>中医博客</h3>
+						<a href="#">我要开博</a>
+					</header>
+					<div class="div clearFix">
+						<header>
+							<h4>精彩推荐</h4>
+							<a href="#" class="more">更多>></a>
+						</header>
+						<ul class="divul">
+							<li>
+								<a href="#">长沙垃圾填埋地成养牛场 牛肉销</a>
+							</li>
+							<li>
+								<a href="#">冬季的养生作战分析</a>
+							</li>
+							<li>
+								<a href="#">中华民族的振兴离不开中华优秀传</a>
+							</li>
+							<li>
+								<a href="#">粗粮让你告别“飞机场”！</a>
+							</li>
+						</ul>
+					</div>
+					<section class="nav">
+						<nav>
+							<span>[专栏]</span>
+							<a href="#">中医养生</a><a href="#">中医疾病</a><a href="#">中医美容</a><a href="#">中医减肥</a><a href="#">中医文化</a><a href="#">两性话题</a><a href="#">心里杂谈</a>
+						</nav>
+						<nav>
+							<span>[热点]</span>
+							<a href="#">感冒</a><a href="#">上火</a><a href="#">艾灸</a><a href="#">针灸</a><a href="#">拔罐</a><a href="#">刮痧</a><a href="#">按摩</a><a href="#">药茶</a>
+						</nav>
+					</section>
+				</section>
+			</section>
+		</section>
+		<section class="bottom clearFix">
+			<header class="header clearFix">
+				<h2>互动</h2>
+				<nav>
+					<a href="#">中医博客</a>|
+					<a href="#">中医问答</a>|
+					<a href="#">中医百科</a>
+				</nav>
+			</header>
+			<section class="content clearFix">
+				<section class="contentleft">
+					<header class="h3 clearFix">
+						<h3>中医问答</h3>
+						<a href="#" class="more">更多>></a>
+					</header>
+					<section class="footer clearFix">
+						<nav class="clearFix">
+							<div><h5 class="yangsheng"><a href="#">保健养生</a></h5>
+								<h5><a href="#">内科</a></h5>
+								<h5><a href="#">外科</a></h5>
+								<h5><a href="#">妇产科</a></h5>
+								<h5><a href="#">男科</a></h5>
+								<h5><a href="#">心理科</a></h5>
+								<h5><a href="#">皮肤科</a></h5>
+								<h5 class="wuguan"><a href="#">五官科</a></h5>
+								<h5><a href="#">儿科</a></h5>
+							</div>
+							<ol>
+								<li><a href="#">即使用又简单的养胃方法</a></li>
+								<li><a href="#">男人会得乳癌吗</a></li>
+								<li><a href="#">我想问献血对人体会造成</a></li>
+								<li><a href="#">大雾天气怎样预防呼吸道</a></li>
+								<li><a href="#">睡觉姿势不对也会致癌吗</a></li>
+								<li><a href="#">喝水也会发胖的原因是什</a></li>
+								<li><a href="#">用饮水机喝水真的卫生吗</a></li>
+								<li><a href="#">男人骑车不好吗？</a></li>
+								<li><a href="#">医生永远不会吃的食物是</a></li>	
+							</ol>
+						</nav>
+						<ul>
+							<li>
+								<a href="#"><img src="img/div3img1.png"/></a>
+								<strong>抑郁症有何前兆？</strong>
+							</li>
+							<li>
+								<a href="#"><img src="img/div3img2.png"/></a>
+								<strong>暖气对身体有哪些不适</strong>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section class="contentcenter">
+					<section class="footer">
+						<header class="h3 clearFix">
+							<h3>中医博客</h3>
+							<a href="#">我要开博</a>
+						</header>
+						<div class="div clearFix">
+							<header>
+								<h4>精彩推荐</h4>
+									<a href="#" class="more">更多>></a>
+							</header>
+							<ul class="divul">
+								<li>
+									<a href="#">长沙垃圾填埋地成养牛场 牛肉销</a>
+								</li>
+								<li>
+									<a href="#">冬季的养生作战分析</a>
+								</li>
+								<li>
+									<a href="#">中华民族的振兴离不开中华优秀传</a>
+								</li>
+								<li>
+									<a href="#">粗粮让你告别“飞机场”！</a>
+								</li>
+							</ul>
+						</div>
+						<section class="nav">
+						<nav>
+							<span>[专栏]</span>
+							<a href="#">中医养生</a><a href="#">中医疾病</a><a href="#">中医美容</a><a href="#">中医减肥</a><a href="#">中医文化</a><a href="#">两性话题</a><a href="#">心里杂谈</a>
+						</nav>
+						<nav>
+							<span>[热点]</span>
+							<a href="#">感冒</a><a href="#">上火</a><a href="#">艾灸</a><a href="#">针灸</a><a href="#">拔罐</a><a href="#">刮痧</a><a href="#">按摩</a><a href="#">药茶</a>
+						</nav>
+						</section>
+					</section>
+				</section>
+				<section class="contentright">
+					<header class="h3 clearFix">
+						<h3>中国百科</h3>
+						<a href="#" class="more">更多>></a>
+					</header>
+					<section class="center">
+						<header>
+							<h4>热门词条</h4>
+						</header>
+						<ul>
+							<li class="litop clearFix">
+								<section>
+									<div class="img">
+										<a href="#"><img src="img/div3img3.png"/></a>
+									</div>
+									<div class="div">
+										<h5>金精石</h5>
+										<p>金精石为不规则的片状，一般长2~6厘米，厚…<a href="#">[详细]</a></p>
+									</div>
+								</section>
+								<nav>
+									<a href="#">金莲花</a><a href="#">荆三棱</a><a href="#">菜子七</a>
+								</nav>
+							</li>
+							<li class="clearFix">
+								<section>
+									<div class="img">
+										<a href="#"><img src="img/div3img4.png"/></a>
+									</div>
+									<div class="div"><!--可以给dl-->
+										<h5>金盏花</h5>
+										<p>金精石为不规则的片状，一般长2~6厘米，厚…<a href="#">[详细]</a></p>
+									</div>
+								</section>
+								<nav class="nav">
+									<a href="#">金莲花</a><a href="#">荆三棱</a><a href="#">菜子七</a>
+								</nav>
+							</li>
+						</ul>
+					</section>
+					<div class="footer">
+						<img src="img/Bg1.png"/><a href="#" class="a1">创建词条</a><img src="img/Bg2.png"/><a href="#" class="a2">完善词条</a>
+					</div>
+				</section>
+			</section>
+		</section>
+	</section>
+</body>
+</html>
